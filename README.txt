@@ -53,7 +53,7 @@ Nothing to show really, this plugin has no settings or frontend.
 == Changelog ==
 
 = 1.2 =
-* Now supports WP REST API v2
+* Now supports WP REST API v2 
 * Note: No longer compatible with legacy versions of the REST API (v1.2 and earlier)
 
 = 1.1.4 =
