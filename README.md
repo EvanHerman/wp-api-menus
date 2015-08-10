@@ -13,7 +13,7 @@
 - `/menu-locations` list of all registered theme locations.
 - `/menu-location/<location>` data for menu in specified menu in theme location. 
 
-Currently, the `menu-locatios/<location>` route for individual menus will return a tree with full menu hierarchy, with correct menu item order and listing children for each menu item. The `menus/<id>` route will output menu details and a flat array of menu items. Item order or if each item has a parent will be indicated in each item attributes, but this route won't output items as a tree. 
+Currently, the `menu-locatios/<location>` route for individual menus will return a tree with full menu hierarchy, with correct menu item order and listing children for each menu item. The `menu/<id>` route will output menu details and a flat array of menu items. Item order or if each item has a parent will be indicated in each item attributes, but this route won't output items as a tree. 
 
 
 #### Contributing
