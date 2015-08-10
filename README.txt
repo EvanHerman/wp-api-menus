@@ -1,10 +1,10 @@
 === WP API Menus ===
-Contributors: nekojira
+Contributors: nekojira, eherman24
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P64V9NTEYFKDL
 Tags: wp-api, json-rest-api, json, menus, rest, api, menu-routes
 Requires at least: 3.6.0
 Tested up to: 4.2.2
-Stable tag: 1.1.5
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,10 @@ However, menu data organization in json is a bit arbitrary, and that's why proba
 Nothing to show really, this plugin has no settings or frontend.
 
 == Changelog ==
+
+= 1.2 =
+* Now supports WP REST API v2
+* Note: No longer compatible with legacy versions of the REST API (v1.2 and earlier)
 
 = 1.1.4 =
 * Supports WordPress 4.2

@@ -4,12 +4,14 @@
  * @package           WP_API_Menus
  * @author            Fulvio Notarstefano <fulvio.notarstefano@gmail.com>
  *
+ * @contributurs	Evan Herman <evan.m.herman@gmail.com>
+ *
  * @wordpress-plugin
  * Plugin Name: JSON REST API Menu routes
  * Description: Extends WP API with WordPress menu routes.
  * Author: Fulvio Notarstefano
  * Author URI: https://github.com/nekojira
- * Version: 1.1.5
+ * Version: 1.2
  * Plugin URI: https://github.com/nekojira/wp-api-menus
  */
 

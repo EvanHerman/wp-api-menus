@@ -1,3 +1,7 @@
+#### 1.2 (10 aug 2015)
+* Now supports WP REST API v2
+* Note: No longer compatible with legacy versions of the REST API (v1.2 and earlier)
+
 #### 1.1.5 (19 jun 2015)
 * Minor edits to headers and phpdocs
 * Improved security
