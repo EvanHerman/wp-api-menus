@@ -85,7 +85,7 @@ if ( ! class_exists( 'WP_JSON_Menus' ) ) :
 		 */
 		public static function get_menus() {
 
-			$json_url = get_json_url() . '/menus/';
+			$json_url = rest_url() . '/menus/';
 			$wp_menus = wp_get_nav_menus();
 
 			$i = 0;
@@ -118,9 +118,11 @@ if ( ! class_exists( 'WP_JSON_Menus' ) ) :
 		 * @param  int   $id ID of the menu
 		 * @return array Menu data
 		 */
-		public function get_menu( $id ) {
-
-			$json_url = get_json_url() . '/menus/';
+		public function get_menu( $data ) {
+			// store the passed in ID
+			$id = $data['id'];
+			
+			$json_url = rest_url() . '/menus/';
 			$wp_menu_object = $id ? wp_get_nav_menu_object( $id ) : array();
 			$wp_menu_items = $id ? wp_get_nav_menu_items( $id ) : array();
 
@@ -156,7 +158,7 @@ if ( ! class_exists( 'WP_JSON_Menus' ) ) :
 		 */
 		public static function get_menu_locations() {
 
-			$json_url = get_json_url() . '/menu-locations/';
+			$json_url = rest_url() . '/menu-locations/';
 
 			$locations = get_nav_menu_locations();
 			$registered_menus = get_registered_nav_menus();
@@ -186,8 +188,8 @@ if ( ! class_exists( 'WP_JSON_Menus' ) ) :
 		 * @param  string $location The theme location menu name
 		 * @return array The menu for the corresponding location
 		 */
-		public function get_menu_location( $location ) {
-
+		public function get_menu_location( $data ) {
+			$location = $data['location'];
 			$locations = get_nav_menu_locations();
 			if ( ! isset( $locations[$location] ) )
 				return array();
