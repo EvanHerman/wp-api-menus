@@ -15,7 +15,7 @@
 
 Currently, the `menu-locatios/<location>` route for individual menus will return a tree with full menu hierarchy, with correct menu item order and listing children for each menu item. The `menu/<id>` route will output menu details and a flat array of menu items. Item order or if each item has a parent will be indicated in each item attributes, but this route won't output items as a tree. 
 
-#### Example
+#### Examples
 
 The URL's you hit to retreive data will be as follows:
 **`/menus`:**
@@ -26,6 +26,88 @@ http://www.Example.com/wp-json/wp-api-menus/v1/menu/<id>
 http://www.Example.com/wp-json/wp-api-menus/v1/menu-locations
 **`/menu-location/<location>`:**
 http://www.Example.com/wp-json/wp-api-menus/v1/menu-location/<location>
+
+#### Sample Response
+
+##### `/menus` Endpoint:
+
+The following is an example of the returned json data, when the `/menus` endpoint is hit:
+
+`
+[
+  {
+    "term_id": "4",
+    "name": "Main Nav",
+    "slug": "main-nav",
+    "term_group": "0",
+    "term_taxonomy_id": "4",
+    "taxonomy": "nav_menu",
+    "description": "",
+    "parent": "0",
+    "count": "2",
+    "ID": "4",
+    "meta": {
+      "links": {
+        "collection": "http://www.Example.com/wp-reaction/wp-json/menus/",
+        "self": "http://www.Example.com/wp-json/menus/4"
+      }
+    }
+  }
+]
+`
+#### `/menu/<id>` Endpoint:
+
+The following is an example of returned json data when the `/menu/<id>` endpoint is hit:
+
+`
+{
+  "ID": 4,
+  "name": "Main Nav",
+  "slug": "main-nav",
+  "description": "",
+  "count": 2,
+  "items": [
+    {
+      "ID": 74,
+      "order": 1,
+      "parent": 0,
+      "title": "Sample Page",
+      "url": "http://www.Example.com/sample-page/",
+      "attr": "",
+      "target": "",
+      "classes": "",
+      "xfn": "",
+      "description": "",
+      "object_id": 2,
+      "object": "page",
+      "type": "post_type",
+      "type_label": "Page"
+    },
+    {
+      "ID": 76,
+      "order": 2,
+      "parent": 0,
+      "title": "Google",
+      "url": "http://www.google.com",
+      "attr": "",
+      "target": "",
+      "classes": "",
+      "xfn": "",
+      "description": "",
+      "object_id": 76,
+      "object": "custom",
+      "type": "custom",
+      "type_label": "Custom Link"
+    }
+  ],
+  "meta": {
+    "links": {
+      "collection": "http://www.Example.com/wp-json/menus/",
+      "self": "http://www.Example.com/wp-json/menus/4"
+    }
+  }
+}
+`
 
 #### Contributing
 
