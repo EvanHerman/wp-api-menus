@@ -19,16 +19,10 @@ Currently, the `menu-locatios/<location>` route for individual menus will return
 
 The URL's you hit to retreive data will be as follows:
 
-- **`/menus`:**
- http://www.Example.com/wp-json/wp-api-menus/v1/menus
- 
-- **`/menu/<id>`:**
- http://www.Example.com/wp-json/wp-api-menus/v1/menu/<id>
-- **`/menu-locations`:**
-http://www.Example.com/wp-json/wp-api-menus/v1/menu-locations
-
-- **`/menu-location/<location>`:**
-http://www.Example.com/wp-json/wp-api-menus/v1/menu-location/<location>
+- **`/menus`:** http://www.Example.com/wp-json/wp-api-menus/v1/menus
+- **`/menu/<id>`:** http://www.Example.com/wp-json/wp-api-menus/v1/menu/<id>
+- **`/menu-locations`:** http://www.Example.com/wp-json/wp-api-menus/v1/menu-locations
+- **`/menu-location/<location>`:** http://www.Example.com/wp-json/wp-api-menus/v1/menu-location/<location>
 
 #### Sample Response
 
