@@ -28,26 +28,52 @@ if ( ! class_exists( 'WP_JSON_Menus' ) ) :
 		 * @param  array $routes Existing routes
 		 * @return array Modified routes
 		 */
-		public function register_routes( $routes ) {
+		public function register_routes() {
+			
+			/*
+			* 	Endpoint: wp-api-menus/v1/menus/
+			* 	Description: Returns all registered menus on site
+			*/
+			register_rest_route( 'wp-api-menus/v1', '/menus', array(
+				'methods' => 'GET',
+				'callback' => array( $this, 'get_menus' ),
+			) );
+			
+			/*
+			*	Endpoint: wp-api-menus/v1/menu/@menu-id
+			* 	Description: Return a specific menu by ID
+			*/
+			register_rest_route( 'wp-api-menus/v1', '/menu/(?P<id>\d+)', array(
+				'methods' => 'GET',
+				'callback' => array( $this, 'get_menu' ),
+				'args' => array(
+					'id' => array(
+						'validate_callback' => 'is_numeric'
+					),
+				),
+			) );
+			
+			/*
+			* 	Endpoint: wp-api-menus/v1/menu-locations
+			* 	Description: Returns all registered menus by location
+			*/
+			register_rest_route( 'wp-api-menus/v1', '/menu-locations', array(
+				'methods' => 'GET',
+				'callback' => array( $this, 'get_menu_locations' ),
+			) );
+			
+			/*
+			* 	Endpoint: wp-api-menus/v1/menu-location/location
+			* 	Description: Returns a specific menu by location slug (eg: main_nav)
+			*/
+			register_rest_route( 'wp-api-menus/v1', '/menu-location/(?<location>\w+)', array(
+				'methods' => 'GET',
+				'callback' => array( $this, 'get_menu_location' ),
+				'args' => array(
+					'location',
+				),
+			) );
 
-			// all registered menus
-			$routes['/menus'] = array(
-				array( array( $this, 'get_menus' ), WP_JSON_Server::READABLE ),
-			);
-			// a specific menu
-			$routes['/menus/(?P<id>\d+)'] = array(
-				array( array( $this, 'get_menu' ), WP_JSON_Server::READABLE ),
-			);
-			// all registered menu locations
-			$routes['/menu-locations'] = array(
-				array( array( $this, 'get_menu_locations' ), WP_JSON_Server::READABLE ),
-			);
-			// menu for given location
-			$routes['/menu-locations/(?<location>\w+)'] = array(
-				array( array( $this, 'get_menu_location' ), WP_JSON_Server::READABLE ),
-			);
-
-			return $routes;
 		}
 
 		/**

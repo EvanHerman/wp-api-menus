@@ -15,6 +15,17 @@
 
 Currently, the `menu-locatios/<location>` route for individual menus will return a tree with full menu hierarchy, with correct menu item order and listing children for each menu item. The `menu/<id>` route will output menu details and a flat array of menu items. Item order or if each item has a parent will be indicated in each item attributes, but this route won't output items as a tree. 
 
+#### Example
+
+The URL's you hit to retreive data will be as follows:
+**`/menus`:**
+http://www.Example.com/wp-json/wp-api-menus/v1/menus
+**`/menu/<id>`:**
+http://www.Example.com/wp-json/wp-api-menus/v1/menu/<id>
+**`/menu-locations`:**
+http://www.Example.com/wp-json/wp-api-menus/v1/menu-locations
+**`/menu-location/<location>`:**
+http://www.Example.com/wp-json/wp-api-menus/v1/menu-location/<location>
 
 #### Contributing
 

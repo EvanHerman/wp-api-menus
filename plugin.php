@@ -47,7 +47,7 @@ if ( ! function_exists ( 'wp_json_menus_init' ) ) :
 	function wp_json_menus_init() {
 
 		$class = new WP_JSON_Menus();
-		add_filter( 'json_endpoints', array( $class, 'register_routes' ) );
+		add_action( 'rest_api_init', array( $class, 'register_routes' ) ); 
 
 	}
 	add_action( 'wp_json_server_before_serve', 'wp_json_menus_init' );
